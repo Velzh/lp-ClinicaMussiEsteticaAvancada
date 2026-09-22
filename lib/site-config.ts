@@ -27,6 +27,15 @@ export const siteConfig = {
     locationBadge: "Sorocaba SP",
   },
 
+  images: {
+    logo: {
+      src: "/images/logo-header.jpg",
+      alt: "Logo Clínica Mussi Estética Avançada e Saúde",
+      width: 150,
+      height: 150,
+    },
+  },
+
   contact: {
     whatsapp: "5515996593623",
     whatsappDisplay: "(15) 99659-3623",

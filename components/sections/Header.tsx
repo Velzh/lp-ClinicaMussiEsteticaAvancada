@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { MapPin, Menu, X } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
@@ -10,17 +11,32 @@ import { cn } from "@/lib/cn";
 export function Header() {
   const [open, setOpen] = useState(false);
   const wa = buildWhatsAppUrl(siteConfig.whatsappMessages.default);
+  const { logo } = siteConfig.images;
 
   return (
     <header className="sticky top-0 z-40 border-b border-white/5 bg-bg/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-page items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#topo" className="min-w-0">
-          <span className="font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">
-            {siteConfig.business.nameShort}
-          </span>
-          <span className="mt-0.5 flex items-center gap-1 text-xs text-muted">
-            <MapPin className="h-3.5 w-3.5 text-accent" aria-hidden />
-            {siteConfig.business.locationBadge}
+        <a
+          href="#topo"
+          className="flex min-w-0 items-center gap-3"
+          aria-label={siteConfig.business.name}
+        >
+          <Image
+            src={logo.src}
+            alt={logo.alt}
+            width={logo.width}
+            height={logo.height}
+            priority
+            className="h-11 w-11 rounded-md object-contain sm:h-12 sm:w-12"
+          />
+          <span className="min-w-0">
+            <span className="block font-display text-lg font-semibold leading-tight tracking-tight text-ink sm:text-xl">
+              {siteConfig.business.nameShort}
+            </span>
+            <span className="mt-0.5 flex items-center gap-1 text-xs text-muted">
+              <MapPin className="h-3.5 w-3.5 shrink-0 text-accent" aria-hidden />
+              {siteConfig.business.locationBadge}
+            </span>
           </span>
         </a>
 
