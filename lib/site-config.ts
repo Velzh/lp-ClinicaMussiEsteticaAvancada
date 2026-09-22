@@ -7,7 +7,7 @@ export type QueixaId =
 export type ProtocolCategory = "facial" | "corporal" | "spa";
 
 export const siteConfig = {
-  siteUrl: "https://clinica-mussi-estetica.vercel.app",
+  siteUrl: "https://lp-clinica-mussi-estetica-avancada.vercel.app",
   shortName: "Clínica Mussi",
 
   business: {
