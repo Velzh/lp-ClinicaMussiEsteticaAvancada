@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: rgb(15 14 19 / <alpha-value>);
+  --color-surface: rgb(24 22 33 / <alpha-value>);
+  --color-ink: rgb(247 245 248 / <alpha-value>);
+  --color-muted: rgb(166 159 175 / <alpha-value>);
+  --color-accent: rgb(226 184 114 / <alpha-value>);
+  --color-accent-2: rgb(196 139 159 / <alpha-value>);
+  --color-ring: rgb(226 184 114 / 0.35);
+
+  --font-display: var(--font-cormorant);
+  --font-body: var(--font-jakarta);
+  --radius-card: 0.75rem;
+  --shadow-card: 0 18px 48px rgb(0 0 0 / 0.35);
+  --shadow-float: 0 12px 32px rgb(226 184 114 / 0.28);
+}
+
+:root {
+  --bg: #0f0e13;
+  --surface: #181621;
+  --ink: #f7f5f8;
+  --muted: #a69faf;
+  --accent: #e2b872;
+  --accent-2: #c48b9f;
+  --ring: rgba(226, 184, 114, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(226, 184, 114, 0.28);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 80;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.max-w-page {
+  max-width: 72rem;
+}
+
+.hero-atmosphere {
+  background:
+    radial-gradient(ellipse 90% 70% at 70% 20%, rgb(196 139 159 / 0.18), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 15% 80%, rgb(226 184 114 / 0.12), transparent 50%),
+    linear-gradient(165deg, #16131c 0%, #0f0e13 45%, #12101a 100%);
+}
+
+.surface-velvet {
+  background:
+    linear-gradient(145deg, rgb(28 25 38 / 0.95), rgb(22 20 30 / 0.98));
+  box-shadow: var(--shadow-card);
+}
